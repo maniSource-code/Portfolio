@@ -240,3 +240,31 @@ window.addEventListener("scroll", () => {
 
 });
 
+
+// ===== HOBBY SLIDER (PAGE BY PAGE) =====
+
+document.querySelectorAll(".hobby-container").forEach(container => {
+
+    const track = container.querySelector(".hobby-track");
+    const pages = container.querySelectorAll(".hobby-page");
+    const leftBtn = container.querySelector(".hobby-scroll.left");
+    const rightBtn = container.querySelector(".hobby-scroll.right");
+
+    let index = 0;
+    const totalPages = pages.length;
+
+    rightBtn.addEventListener("click", () => {
+        if (index < totalPages - 1) {
+            index++;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+    });
+
+    leftBtn.addEventListener("click", () => {
+        if (index > 0) {
+            index--;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+    });
+
+});

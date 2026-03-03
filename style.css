@@ -548,6 +548,40 @@ nav ul li a.active::after {
     margin-top: 8px;
     font-size: 14px;
 }
+/* ================= HOBBY SLIDER LIKE PROJECTS ================= */
+
+.hobby-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hobby-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.hobby-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.hobby-page {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* Scroll buttons */
+.hobby-scroll {
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px;
+}
 
 /* Netflix Style Slider */
 
