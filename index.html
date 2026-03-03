@@ -4,87 +4,646 @@
     <meta charset="UTF-8">
     <title>Manikanta Mangalapalli | DevOps Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <h2 class="logo">Manikanta</h2>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<!-- ================= NAVBAR ================= -->
+<nav>
+    <h2 class="logo">PORTFOLIO</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Hi, I'm <span>Manikanta Mangalapalli</span></h1>
-        <h2 class="typing"></h2>
-        <a href="#" class="btn">Download Resume</a>
-    </section>
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+    <div class="hero-container">
 
-    <!-- About -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate DevOps Engineer focused on automation, cloud computing, 
-            and infrastructure management. I enjoy working with Linux systems, 
-            building CI/CD pipelines, and deploying scalable applications using 
-            modern DevOps tools and practices.
-        </p>
-    </section>
+        <div class="hero-left">
+            <h1>Hi, I'm <span>Manikanta Mangalapalli</span></h1>
+            <h2 class="typing"></h2>
+            <p>
+                Passionate DevOps Engineer focused on automation,
+                cloud infrastructure and CI/CD pipelines.
+            </p>
+            <br>
+          <div class="education-box">
+             <h4>🎓 Education</h4>
+                <p>MallaReddy University</p>
+               <div class="education-details">
+                  <p><strong>B.Tech – Computer Science Engineering</strong></p>
+                  <p>2022 | CGPA: 8.2</p>
+                  <p>Relevant Coursework: Data Structures, OS, Cloud Computing</p>
+               </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
 
-    <!-- Skills -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skill-container">
-            <div class="skill">Linux</div>
-            <div class="skill">Git & GitHub</div>
-            <div class="skill">Docker</div>
-            <div class="skill">Kubernetes</div>
-            <div class="skill">AWS</div>
-            <div class="skill">Jenkins</div>
-            <div class="skill">Shell Scripting</div>
-            <div class="skill">Ansible</div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <h3>Production Linux Server Setup</h3>
-            <p>Configured and secured a production-style Linux server with Nginx hosting, 
-            firewall setup, cron automation, and log monitoring.</p>
-            <a href="#">View Project</a>
+              <a href="assets/resume.pdf"
+                 download="Manikanta_Mangalapalli_Resume.pdf"
+                 class="btn">
+                 Download Resume
+              </a>
+            </div>
         </div>
 
-        <div class="project-card">
-            <h3>CI/CD Pipeline using Jenkins</h3>
-            <p>Built an automated CI/CD pipeline integrating GitHub, Docker, 
-            and Jenkins to deploy applications efficiently.</p>
-            <a href="#">View Project</a>
+        <div class="hero-right">
+            <img src="images/profile.jpg" alt="Profile Image">
         </div>
 
-    </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: manikanta@example.com</p>
-        <p>GitHub: github.com/yourusername</p>
-        <p>LinkedIn: linkedin.com/in/yourprofile</p>
-    </section>
+<!-- ================= ABOUT ================= -->
+<section id="about"  class="about-section">
+    <div class="about-container">
 
-    <footer>
-        <p>© 2026 Manikanta Mangalapalli | DevOps Engineer</p>
-    </footer>
+        <div class="about-image">
+            <img src="images/about.jpeg" alt="About Image">
+        </div>
 
-    <script src="script.js"></script>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a dedicated and self-motivated DevOps enthusiast with a 
+                strong foundation in Linux system administration and cloud computing 
+                using AWS. I have hands-on experience setting up production-style Linux 
+                servers, configuring web servers like Nginx, managing users and permissions, 
+                implementing firewall rules, and automating tasks using Bash scripting and 
+                cron jobs. I have also worked with Docker to containerize applications and 
+                understand the fundamentals of CI/CD pipelines for streamlined deployments.
+            </p>
+            <br>
+            <p>I enjoy building real-world projects that focus on automation, 
+                infrastructure reliability, and system monitoring. My approach 
+                emphasizes security best practices, performance optimization, and 
+                continuous improvement. I am passionate about learning modern DevOps 
+                tools and cloud-native technologies while strengthening my problem-solving skills.
+             </p>
+             <br>
+             <p>My goal is to contribute to teams that value automation, 
+                scalability, and efficient infrastructure management while 
+                continuing to grow as a DevOps engineer.
+             </p>
+       </div>
+
+    </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" >
+
+   <h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+   <!-- ============ Repeat This to all Skills ================ -->
+    <div class="skill-card">
+    <div class="skill-header">
+        <img src="images/skills/linux.png" alt="Linux">
+        <h4>Linux</h4>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-fill" style="width: 90%;">
+            <span>90%</span>
+        </div>
+    </div>
+
+    <div class="skill-cert">
+        <p>✔ Linux Administration Project</p>
+        <p>✔ Server Hardening Implementation</p>
+    </div>
+</div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/aws.png" alt="AWS">
+            <h4>AWS</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 80%;">
+                <span>80%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/docker.png" alt="Docker">
+            <h4>Docker</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 85%;">
+                <span>85%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/kubernetes.png" alt="Kubernetes">
+            <h4>Kubernetes</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 75%;">
+                <span>75%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/jenkins.png" alt="Jenkins">
+            <h4>Jenkins</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 70%;">
+                <span>70%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/terraform.png" alt="Terraform">
+            <h4>Terraform</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 65%;">
+                <span>65%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/bash.png" alt="Shell Scripting">
+            <h4>Shell Scripting</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 85%;">
+                <span>85%</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-header">
+            <img src="images/skills/prometheus.png" alt="Prometheus">
+            <h4>Prometheus</h4>
+        </div>
+        <div class="progress-container">
+            <div class="progress-fill" style="width: 60%;">
+                <span>60%</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- ================= MAIN HOBBIES ================= -->
+<!-- ================= HOBBIES ================= -->
+<section id="hobbies" class="hobbies-section">
+    
+    <h2 class="hobbies-title">Hobbies</h2>
+<p class="hobbies-description">
+    Beyond DevOps and technology, I enjoy watching movies, reading books,
+    exploring new places, and discovering new interests that inspire creativity.
+</p>
+
+    <!-- TABS -->
+    <div class="hobby-tabs">
+        <button class="tab active" data-category="movies">Movies</button>
+        <button class="tab" data-category="books">Books</button>
+        <button class="tab" data-category="trips">Trips</button>
+        <button class="tab" data-category="others">Others</button>
+    </div>
+
+    <!-- ================= MOVIES ================= -->
+    <div class="hobby-content active" id="movies">
+  <div class="movies-wrapper">
+
+    <!-- SLIDER -->
+    <div class="slider-container">
+        <button class="scroll-btn left">&#10094;</button>
+
+        <div class="hobby-slider">
+
+            <!-- 10 Movies Example -->
+            <div class="hobby-card">
+    <img src="images/hobbies/movie1.jpg">
+
+    <!-- Always visible -->
+    <h4 class="movie-title">Movie 1</h4>
+
+    <!-- Hidden until hover -->
+    <div class="movie-details">
+        <p>Director: ABC</p>
+        <p>IMDb: 8.4</p>
+        <p>Genre: Thriller</p>
+    </div>
+</div>
+
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 2</h4><p>Director: ABC</p></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 3</h4><p>Director: ABC</p></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 4</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 5</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 6</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 7</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 8</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 9</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/movie1.jpg"><h4>Movie 10</h4></div>
+
+        </div>
+
+        <button class="scroll-btn right">&#10095;</button>
+    </div>
+    
+
+    <!-- Suggestion BELOW -->
+    <div class="suggestion-box movie-suggest">
+        <h4>Suggest a Movie</h4>
+        <br>
+        <form class="suggestion-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Movie Suggestion" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+ </div>
+</div>
+
+    <!-- ================= BOOKS ================= -->
+    <div class="hobby-content" id="books">
+
+    <div class="slider-container">
+        <button class="scroll-btn left">&#10094;</button>
+
+        <div class="hobby-slider">
+
+            <!-- 10 Demo Books -->
+
+            <div class="hobby-card">
+                <img src="images/hobbies/book1.jpg">
+                <h4>Book 1</h4>
+                <p>Author: XYZ</p>
+            </div>
+
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 2</h4><p>Author: XYZ</p></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 3</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 4</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 5</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 6</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 7</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 8</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 9</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/book1.jpg"><h4>Book 10</h4></div>
+
+        </div>
+
+        <button class="scroll-btn right">&#10095;</button>
+    </div>
+
+    <!-- Suggestion -->
+    <div class="suggestion-box">
+        <h4>Suggest a Book</h4>
+        <br>
+        <form class="suggestion-form">
+            <input type="text" class="suggest-name" placeholder="Your Name" required>
+            <input type="text" class="suggest-input" placeholder="Book Suggestion" required>
+            <button type="submit">Submit</button>
+            <p class="suggest-status"></p>
+        </form>
+    </div>
+
+</div>
+
+    <!-- ================= TRIPS ================= -->
+    <div class="hobby-content" id="trips">
+
+    <div class="slider-container">
+        <button class="scroll-btn left">&#10094;</button>
+
+        <div class="hobby-slider">
+
+            <!-- 10 Demo Trips -->
+
+            <div class="hobby-card">
+                <img src="images/hobbies/trip1.jpg">
+                <h4>Trip 1</h4>
+                <p>Location: Goa</p>
+            </div>
+
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 2</h4><p>Location: Kerala</p></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 3</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 4</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 5</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 6</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 7</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 8</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 9</h4></div>
+            <div class="hobby-card"><img src="images/hobbies/trip1.jpg"><h4>Trip 10</h4></div>
+
+        </div>
+
+        <button class="scroll-btn right">&#10095;</button>
+    </div>
+
+    <!-- Suggestion -->
+    <div class="suggestion-box">
+        <h4>Suggest a Trip</h4>
+        <br>
+        <form class="suggestion-form">
+            <input type="text" class="suggest-name" placeholder="Your Name" required>
+            <input type="text" class="suggest-input" placeholder="Trip Suggestion" required>
+            <button type="submit">Submit</button>
+            <p class="suggest-status"></p>
+        </form>
+    </div>
+
+</div>
+    <!-- ================= OTHERS ================= -->
+   <div class="hobby-content" id="others">
+
+    <div class="slider-header">
+        <h3>Other Interests</h3>
+        <button class="view-all-btn" data-target="others-all">View All</button>
+    </div>
+
+    <div class="slider-container">
+        <button class="scroll-btn left">&#10094;</button>
+
+        <div class="hobby-slider">
+
+            <div class="hobby-card">
+                <img src="images/hobbies/coding.jpg">
+                <h4>Competitive Coding</h4>
+                <p>Problem solving practice</p>
+            </div>
+
+            <div class="hobby-card">
+                <img src="images/hobbies/music.jpg">
+                <h4>Music</h4>
+                <p>Relaxation & Focus</p>
+            </div>
+
+        </div>
+
+        <button class="scroll-btn right">&#10095;</button>
+    </div>
+
+    <div class="suggestion-box right-align">
+        <h4>Suggest Something</h4>
+        <br><form class="suggestion-form">
+            <input type="text" class="suggest-name" placeholder="Your Name" required>
+            <input type="text" class="suggest-input" placeholder="Suggestion" required>
+            <button type="submit">Submit</button>
+            <p class="suggest-status"></p>
+        </form>
+    </div>
+
+</div>
+   
+
+</section>
+
+<!-- ================= MAIN PROJECTS ================= -->
+<!-- ================= PROJECTS ================= -->
+<section id="projects" >
+
+    <h2 class="projects-title">Projects</h2>
+    <p class="projects-description">
+        Hands-on DevOps and Cloud projects demonstrating automation,
+        CI/CD, infrastructure management and deployment strategies.
+    </p>
+    
+<div class="projects-container">
+
+    <button class="project-scroll left">&#10094;</button>
+
+    <div class="projects-viewport">
+        <div class="projects-track">
+
+            <!-- PAGE 1 -->
+            <div class="projects-page">
+                <!-- 6 projects -->
+                <!-- Copy your existing first 6 project cards here -->
+                 
+                <!-- 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Production Linux Server Setup</h3>
+                        <p class="short-desc">Configured secure Linux production server.</p>
+                        <div class="project-hover">
+                            <p>
+                                Installed Nginx, configured firewall rules,
+                                implemented cron backups, log monitoring,
+                                user management and server hardening.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>CI/CD Pipeline with Jenkins</h3>
+                        <p class="short-desc">Automated deployment pipeline.</p>
+                        <div class="project-hover">
+                            <p>
+                                Integrated GitHub, Docker and Jenkins to
+                                automatically build, test and deploy applications.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Dockerized Multi-Tier App</h3>
+                        <p class="short-desc">Containerized full stack application.</p>
+                        <div class="project-hover">
+                            <p>
+                                Built and deployed frontend, backend and database
+                                containers using Docker Compose.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Kubernetes Deployment</h3>
+                        <p class="short-desc">Deployed scalable K8s cluster.</p>
+                        <div class="project-hover">
+                            <p>
+                                Created deployment, service, ingress and HPA
+                                configurations for scalable production workloads.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AWS EC2 Web Hosting</h3>
+                        <p class="short-desc">Hosted application on AWS.</p>
+                        <div class="project-hover">
+                            <p>
+                                Provisioned EC2 instance, configured security groups,
+                                hosted static and dynamic web applications.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Infrastructure as Code (Terraform)</h3>
+                        <p class="short-desc">Automated cloud provisioning.</p>
+                        <div class="project-hover">
+                            <p>
+                                Used Terraform to provision AWS infrastructure
+                                including VPC, EC2 and security configurations.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+        
+            </div>
+            <!-- PAGE 2 -->
+            <div class="projects-page">
+                <!-- next projects -->
+                 <!-- 7 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Monitoring with Prometheus</h3>
+                        <p class="short-desc">Implemented system monitoring.</p>
+                        <div class="project-hover">
+                            <p>
+                                Installed Prometheus & Grafana to monitor
+                                system metrics and visualize performance data.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Log Automation with Bash</h3>
+                        <p class="short-desc">Automated log cleanup & alerts.</p>
+                        <div class="project-hover">
+                            <p>
+                                Wrote shell scripts to rotate logs,
+                                monitor errors and trigger email alerts.
+                            </p>
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        
+
+        </div>
+    </div>
+
+    <button class="project-scroll right">&#10095;</button>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <br>
+    <p class="contact-desc">
+        I'm open to DevOps opportunities, collaborations, and technical discussions.
+        Feel free to reach out!
+    </p>
+
+    <div class="contact-container">
+
+        <!-- Email -->
+        <div class="contact-card">
+            <img src="images/icons/email.png" alt="Email Icon">
+            <div>
+                <h4>Email</h4>
+                <a href="mailto:manikanta@example.com">manikanta@example.com</a>
+            </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="contact-card">
+            <img src="images/icons/linkedin.png" alt="LinkedIn Icon">
+            <div>
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                    linkedin.com/in/yourprofile
+                </a>
+            </div>
+        </div>
+
+        <!-- GitHub -->
+        <div class="contact-card">
+            <img src="images/icons/github.png" alt="GitHub Icon">
+            <div>
+                <h4>GitHub</h4>
+                <a href="https://github.com/yourusername" target="_blank">
+                    github.com/yourusername
+                </a>
+            </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-card">
+            <img src="images/icons/phone.png" alt="Phone Icon">
+            <div>
+                <h4>Phone</h4>
+                <p>+91 9XXXXXXXXX</p>
+            </div>
+        </div>
+
+        <!-- Location -->
+       <div class="contact-location">
+    <img src="images/icons/location.png" alt="Location Icon">
+    <span>Hyderabad, India</span>
+</div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Manikanta Mangalapalli | DevOps Engineer</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
