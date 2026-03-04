@@ -24,7 +24,7 @@ body {
 
 /* Dark overlay for readability */
 section {
-    padding: 100px 60px;
+   padding: 60px 80px;
     background: rgba(0, 0, 0, 0.75); /* dark transparent overlay */
     min-height: 100vh;
 }
@@ -320,323 +320,323 @@ nav ul li a.active::after {
 /* ========================
    HOBBIES SECTION
 ======================== */
-
-/* ================= HOBBIES NEW ================= */
-
-.hobby-tabs {
-    display: flex;
-    gap: 20px;
-    margin: 30px 0;
+/* ---------- HOBBIES LAYOUT ---------- */
+#hobbies{
+padding-top: 20px;
 }
 
-.tab {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 5px;
+.hobby-desc{
+max-width:700px;
+opacity:0.9;
+margin-bottom:25px;
 }
 
-.tab.active {
-    border-color: #00ffcc;
-    color: #00ffcc;
+/* tabs */
+
+.hobby-tabs{
+display:flex;
+gap:25px;
+margin-bottom:30px;
 }
 
-.hobby-content {
-    display: none;
+.tab{
+cursor:pointer;
+color:#aaa;
+font-weight:500;
+transition:0.3s;
 }
 
-.hobby-content.active {
-    display: block;
+.tab:hover{
+color:#00ffd5;
 }
 
-.hobby-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-height: 500px;
-    overflow-y: auto;
+.tab.active{
+color:#00ffd5;
+border-bottom:2px solid #00ffd5;
+padding-bottom:4px;
+}
+.hobby-tabs{
+display:flex;
+gap:25px;
+margin:25px 0;
 }
 
-/* IMAGE ITEM */
-.hobby-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+.tab{
+cursor:pointer;
+color:#aaa;
 }
 
-.hobby-item img {
-    width: 100%;
-    display: block;
-    transition: 0.4s;
-}
-/* ================= HOBBY IMAGE HIGHLIGHT ================= */
-
-/* ================= MOVIE DETAILS BELOW IMAGE ================= */
-
-.hobby-card {
-    width: 200px;
-    transition: all 0.3s ease;
-}
-/* Make slider allow stacking */
-.hobby-slider {
-    position: relative;
+.tab.active{
+color:#00ffd5;
+border-bottom:2px solid #00ffd5;
 }
 
-/* Default stacking */
-.hobby-card {
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hobby-content{
+display:none;
 }
 
-/* Bring hovered card to front */
-.hobby-card:hover {
-    z-index: 50;
+.hobby-content.active{
+display:block;
+}
+/* ---------- SLIDER ---------- */
+
+/* Slider layout */
+
+.slider{
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-top:30px;
 }
 
-.hobby-card img {
-    width: 100%;
-    border-radius: 8px;
-    transition: 0.3s ease;
+/* Visible window */
+
+.slider-window{
+overflow:hidden;
+width:1230px;   /* exactly 6 cards */
+margin:auto;
 }
 
-.movie-title {
-    margin-top: 8px;
-    font-weight: 600;
+/* Track */
+
+.slider-track{
+display:flex;
+gap:30px;
+transition:0.4s ease;
+justify-content:flex-start;
 }
 
-/* Hide details */
-.movie-details {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    font-size: 13px;
-    color: #ccc;
-    transition: all 0.3s ease;
+/* Card */
+
+.card{
+min-width:180px;
+max-width:180px;
+text-align:center;
 }
 
-/* Show details only on hover */
-.hobby-card:hover .movie-details {
-    max-height: 100px;
-    opacity: 1;
+/* If less than 6 items center them */
+
+.slider-track.center{
+justify-content:center;
+}
+.slider-track{
+display:flex;
+gap:30px;
+transition:0.4s ease;
 }
 
-/* Slight lift effect */
-.hobby-card:hover {
-    transform: translateY(-5px);
+/* 5 images per row */
+
+.card{
+min-width:180px;
+max-width:180px;
+text-align:center;
+position:relative;
 }
 
-/* Glow + zoom */
-.hobby-card:hover img {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px #00ffcc;
+.slider{
+position:relative;
+display:flex;
+align-items:center;
 }
 
-/* OVERLAY */
-.hobby-overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
-    width: 100%;
-    padding: 15px;
-    transform: translateY(100%);
-    transition: 0.4s;
+.slider-window{
+overflow:hidden;
+width:100%;
 }
 
-.hobby-item:hover .hobby-overlay {
-    transform: translateY(0);
+.slider-track{
+display:flex;
+gap:25px;
+transition:0.4s;
 }
 
-.hobby-item:hover img {
-    transform: scale(1.05);
+.card{
+min-width:200px;
+text-align:center;
 }
 
-/* Suggestion Box */
-.suggestion-box {
-    margin-top: 40px;
+.card img{
+width:100%;
+border-radius:10px;
 }
 
-.suggestion-box input {
-    padding: 8px;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: none;
+.slide-btn{
+position:absolute;
+background:black;
+color:white;
+border:none;
+font-size:22px;
+cursor:pointer;
+padding:10px;
 }
 
-.suggestion-box button {
-    padding: 8px 15px;
-    background: #00ffcc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-/* ================= MOVIE WRAPPER ================= */
-
-.movies-wrapper {
-    display: flex;
-    flex-direction: column;
+.slide-btn.left{
+left:-10px;
 }
 
-/* Push suggestion to right */
-.movie-suggest {
-    margin-top: 30px;
-    width: 350px;
-    align-self: flex-end;   /* THIS moves it to right */
+.slide-btn.right{
+right:-10px;
+}
+/* ---------- IMAGE STYLE ---------- */
+
+.card img{
+width:180px;
+height:260px;
+object-fit:cover;
+border-radius:10px;
+transition:0.3s;
 }
 
-/* ================= HOBBY LAYOUT NEW ================= */
+/* hover highlight */
 
-.hobby-wrapper {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+.card:hover img{
+transform:scale(1.05);
+box-shadow:0 0 18px #00ffd5;
+}
+/* ---------- TITLE ---------- */
+
+.title{
+margin-top:10px;
+font-weight:600;
+font-size:14px;
+}
+/* ---------- DETAILS ---------- */
+
+.details{
+opacity:0;
+max-height:0;
+overflow:hidden;
+font-size:13px;
+margin-top:5px;
+color:#ddd;
+transition:0.3s ease;
 }
 
-/* LEFT SIDE (Images) */
-.hobby-left {
-    flex: 3;
+/* reveal on hover */
+
+.card:hover .details{
+opacity:1;
+max-height:120px;
+}
+/* ---------- ARROWS ---------- */
+
+.slide-btn{
+position:absolute;
+background:black;
+color:white;
+border:none;
+font-size:22px;
+cursor:pointer;
+padding:10px;
+z-index:5;
 }
 
-/* Each image fixed width */
-.hobby-item {
-    min-width: 200px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
+.slide-btn.left{
+left:-20px;
 }
 
-.hobby-item img {
-    width: 200px;
-    height: 280px;
-    object-fit: cover;
-    transition: 0.3s;
+.slide-btn.right{
+right:-20px;
 }
 
-
-.hobby-item:hover .hobby-overlay {
-    transform: translateY(0);
+.slide-btn:hover{
+color:#00ffd5;
 }
 
-/* RIGHT SIDE (Suggestion) */
-.suggestion-box {
-    margin-top: 30px;
-    max-width: 400px;
+.slider-track{
+display:flex;
+gap:30px;
 }
 
-.suggestion-box h4 {
-    margin-bottom: 10px;
+.card{
+min-width:180px;
+max-width:180px;
 }
 
-.suggestion-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: none;
+.tab-content{
+position:relative;
+}
+/* suggestion wrapper */
+
+.suggestion-wrapper{
+display:flex;
+justify-content:flex-end;
+margin-top:30px;
 }
 
-.suggestion-form button {
-    width: 100%;
-    padding: 8px;
-    background: #00ffcc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* suggestion box */
+
+.suggestion-box{
+
+width:260px;
+
+background:rgba(0,0,0,0.8);
+
+padding:20px;
+
+border-radius:10px;
+
+border:1px solid #00ffd5;
+
+box-shadow:0 0 10px #00ffd5;
 }
 
-.suggest-status {
-    margin-top: 8px;
-    font-size: 14px;
-}
-/* ================= HOBBY SLIDER LIKE PROJECTS ================= */
+/* title */
 
-.hobby-container {
-    display: flex;
-    align-items: center;
-    position: relative;
+.suggest-title{
+color:#00ffd5;
+margin-bottom:12px;
 }
 
-.hobby-viewport {
-    overflow: hidden;
-    width: 100%;
+/* inputs */
+
+.suggestion-form input{
+
+width:100%;
+
+padding:8px;
+
+margin-bottom:10px;
+
+border:none;
+
+border-radius:5px;
 }
 
-.hobby-track {
-    display: flex;
-    transition: transform 0.5s ease;
+/* button */
+
+.suggestion-form button{
+
+width:100%;
+
+padding:8px;
+
+background:#00ffd5;
+
+color:black;
+
+border:none;
+
+border-radius:5px;
+
+cursor:pointer;
+
+font-weight:600;
 }
 
-.hobby-page {
-    min-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+.suggestion-form button:hover{
+background:#00e6c0;
 }
 
-/* Scroll buttons */
-.hobby-scroll {
-    background: rgba(0,0,0,0.6);
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    padding: 10px;
+/* status message */
+
+.suggest-status{
+margin-top:8px;
+font-size:13px;
 }
 
-/* Netflix Style Slider */
-
-.slider-container {
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-    overflow-y: visible;
-    position: relative;
-}
-
-.hobby-slider {
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;   
-    overflow-y: visible;
-    scroll-behavior: smooth;
-    width: 100%;
-}
-
-.hobby-card {
-    position: relative;
-    z-index: 1;
-    min-width: 180px;
-}
-
-.hobby-card:hover {
-    z-index: 100;
-}
-
-.hobby-card img {
-    width: 180px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.hobby-card h4 {
-    margin-top: 8px;
-}
-
-.scroll-btn {
-    background: rgba(0,0,0,0.6);
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.right-align {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
 
 /* ========================
    PROJECTS

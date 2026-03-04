@@ -80,109 +80,124 @@ document.querySelectorAll(".skill-btn").forEach(button => {
 /* =========================
    HOBBIES SECTION (TABS + DETAILS)
 ========================= */
-
-/*
-HOW TO ADD NEW MOVIES / BOOKS?
-
-👉 Just copy a .hobby-item block inside HTML.
-👉 No need to edit JS.
-*/
-
 const tabs = document.querySelectorAll(".tab");
 const contents = document.querySelectorAll(".hobby-content");
 
-tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
+tabs.forEach(tab=>{
+tab.addEventListener("click",()=>{
 
-        document.querySelector(".tab.active").classList.remove("active");
-        tab.classList.add("active");
+tabs.forEach(t=>t.classList.remove("active"));
+contents.forEach(c=>c.classList.remove("active"));
 
-        contents.forEach(content => {
-            content.classList.remove("active");
-        });
+tab.classList.add("active");
+document.getElementById(tab.dataset.tab).classList.add("active");
 
-        document.getElementById(tab.dataset.category)
-            .classList.add("active");
-    });
+});
 });
 
-/* ===========================
-   GOOGLE SHEET SUGGESTIONS
-=========================== */
 
-/*
-IMPORTANT:
-Replace YOUR_SCRIPT_URL below with your
-Google Apps Script /exec URL
-*/
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaSMpw-Rcu_znUuDfDqvr93e1EW-22LRkzcMApgqE/dev";
+document.querySelectorAll(".slider").forEach(slider => {
+
+const track = slider.querySelector(".slider-track");
+const cards = slider.querySelectorAll(".card");
+const left = slider.querySelector(".left");
+const right = slider.querySelector(".right");
+
+const visibleCards = 6;
+const cardSpace = 210; // 180 card + 30 gap
+const moveAmount = visibleCards * cardSpace;
+
+let position = 0;
+const totalCards = cards.length;
+
+/* maximum scroll allowed */
+
+const maxScroll = Math.max(0,(totalCards - visibleCards) * cardSpace);
+
+
+/* RIGHT BUTTON */
+
+right.onclick = () => {
+
+position += moveAmount;
+
+if(position > maxScroll){
+position = maxScroll;
+}
+
+track.style.transform = `translateX(-${position}px)`;
+
+};
+
+
+/* LEFT BUTTON */
+
+left.onclick = () => {
+
+position -= moveAmount;
+
+if(position < 0){
+position = 0;
+}
+
+track.style.transform = `translateX(-${position}px)`;
+
+};
+
+});
+
+
+
+/* ================= SUGGESTION BOX================= */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDG-BefYUO0YMTa9CWjm7U6_Eziu_TTzo1LMj60maEenYOvEfoWZ3UWU231a5h28T5/exec";
 
 document.querySelectorAll(".suggestion-form").forEach(form => {
 
-    form.addEventListener("submit", async function(e) {
+form.addEventListener("submit", function(e){
 
-        e.preventDefault();
+e.preventDefault();
 
-        const button = this.querySelector("button");
-        const statusText = this.querySelector(".suggest-status");
+const button = this.querySelector("button");
+const statusText = this.querySelector(".suggest-status");
 
-        // Prevent double click
-        button.disabled = true;
-        button.textContent = "Submitting...";
+button.disabled = true;
+button.textContent = "Submitting...";
 
-        const name = this.querySelector(".suggest-name").value;
-        const suggestion = this.querySelector(".suggest-input").value;
+const name = this.querySelector(".suggest-name").value;
+const suggestion = this.querySelector(".suggest-input").value;
 
-        const activeTab = document.querySelector(".tab.active");
-        const category = activeTab.dataset.category;
+const activeTab = document.querySelector(".tab.active");
+const category = activeTab ? activeTab.dataset.category : "unknown";
 
-        try {
+const formData = new URLSearchParams();
 
-            await fetch(SCRIPT_URL, {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: name,
-                    category: category,
-                    suggestion: suggestion
-                })
-            });
+formData.append("name", name);
+formData.append("category", category);
+formData.append("suggestion", suggestion);
 
-            statusText.textContent = "Suggestion sent successfully!";
-            statusText.style.color = "#00ffcc";
+fetch(SCRIPT_URL, {
+method: "POST",
+body: formData
+})
+.then(() => {
 
-            this.reset();
+statusText.textContent = "Suggestion sent successfully!";
+statusText.style.color = "#00ffcc";
+button.disabled = false;
+button.textContent = "Submit";
+form.reset();
 
-        } catch (error) {
+})
+.catch(() => {
 
-            statusText.textContent = "Error sending suggestion.";
-            statusText.style.color = "red";
-        }
-
-        button.disabled = false;
-        button.textContent = "Submit";
-
-    });
+statusText.textContent = "Error sending suggestion.";
+statusText.style.color = "red";
+  button.disabled = false;
+   button.textContent = "Submit";
 
 });
-/* Netflix Scroll */
 
-document.querySelectorAll(".slider-container").forEach(container => {
-
-    const slider = container.querySelector(".hobby-slider");
-    const leftBtn = container.querySelector(".left");
-    const rightBtn = container.querySelector(".right");
-
-    const scrollAmount = 6 * 200; // 6 images at a time
-
-    rightBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-
-    leftBtn.addEventListener("click", () => {
-        slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
+});
 
 });
 
@@ -241,30 +256,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-// ===== HOBBY SLIDER (PAGE BY PAGE) =====
 
-document.querySelectorAll(".hobby-container").forEach(container => {
 
-    const track = container.querySelector(".hobby-track");
-    const pages = container.querySelectorAll(".hobby-page");
-    const leftBtn = container.querySelector(".hobby-scroll.left");
-    const rightBtn = container.querySelector(".hobby-scroll.right");
 
-    let index = 0;
-    const totalPages = pages.length;
-
-    rightBtn.addEventListener("click", () => {
-        if (index < totalPages - 1) {
-            index++;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-    });
-
-    leftBtn.addEventListener("click", () => {
-        if (index > 0) {
-            index--;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-    });
-
-});
