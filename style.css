@@ -508,18 +508,21 @@ font-size:14px;
 opacity:0;
 max-height:0;
 overflow:hidden;
-font-size:13px;
+font-size:12px;
 margin-top:5px;
 color:#ddd;
 transition:0.3s ease;
+text-align: left;
+width: fit-content;
 }
 
 /* reveal on hover */
 
 .card:hover .details{
 opacity:1;
-max-height:120px;
+max-height:150px;
 }
+
 /* ---------- ARROWS ---------- */
 
 .slide-btn{
@@ -755,12 +758,12 @@ font-size:13px;
    CONTACT
 ======================== */
 
-/* CONTACT SECTION */
 .contact-section {
     padding: 80px 10%;
     color: white;
 }
 
+/* Title */
 .contact-section h2 {
     font-size: 32px;
     margin-bottom: 10px;
@@ -771,9 +774,10 @@ font-size:13px;
     opacity: 0.8;
 }
 
+/* 2x2 Grid Layout */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* FORCE 2x2 */
     gap: 25px;
 }
 
@@ -781,38 +785,51 @@ font-size:13px;
 .contact-card {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
+    padding: 18px 20px;
     background: rgba(0,0,0,0.6);
     border-radius: 12px;
-    transition: 0.3s ease;
-    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
 }
 
+/* ICON FIX */
 .contact-card img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    padding: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
 }
 
+/* TEXT */
 .contact-card h4 {
     margin: 0;
-    color: #00f5d4; /* your neon name color */
+    color: #00f5d4;
+    font-size: 16px;
 }
 
+/* FIX EMAIL OVERFLOW */
 .contact-card a,
 .contact-card p {
     margin: 5px 0 0;
     color: white;
     text-decoration: none;
     font-size: 14px;
+
+    /* IMPORTANT FIX */
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
+/* HOVER EFFECT */
 .contact-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.02);
+    border: 1px solid #00f5d4;
+    box-shadow: 0 8px 20px rgba(0, 245, 212, 0.2);
 }
-
-
-
 /* ========================
    FOOTER
 ======================== */
